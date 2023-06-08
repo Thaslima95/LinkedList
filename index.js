@@ -94,9 +94,15 @@ removevalue(value)
     }
     else{
         let current=this.header;
-
+       if(current.data===value)
+       {
+        this.header=current.next;
+        return true
+       }
+       else{
         while(current.next!=null)
         {
+            console.log(current.data)
             if(current.next.data==value)
             {
                 current.next=current.next.next;
@@ -107,6 +113,7 @@ removevalue(value)
            
         }
         return false;
+    }
     }
 }
 
@@ -164,7 +171,7 @@ console.log(linklist.append(110))
 // console.log(linklist.printList())
 // console.log(linklist.removehead())
 console.log(linklist.searchdata(8))
-console.log(linklist.removevalue(4))
+console.log(linklist.removevalue(90))
 console.log(linklist.printList())
 console.log(linklist.removeTail())
 console.log(linklist.printList())

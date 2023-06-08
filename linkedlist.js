@@ -20,10 +20,6 @@ const linkedlistSchema = new mongoose.Schema(
 
 LinkedListCollection = mongoose.model("LinkedList", linkedlistSchema);
 
-
-
-
-
 class LinkedList{
     constructor()
     {
@@ -99,9 +95,6 @@ class LinkedList{
         console.log(result)
     }
 }
-
-
-
 
 (async function () {
   try {
