@@ -28,17 +28,7 @@ class BST{
     {
         return this.root===null
     }
-    const connection = mysql.createConnection({
-  host: 'localhost',
-  user: 'root',
-  password: "aafiya.",
-  database: 'Ecart',
-});
-
-connection.connect((err) => {
-  if (err) throw err;
-  console.log('Connected to MySQL database');
-});
+    
     
  insert(data)
 {
