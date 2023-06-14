@@ -227,7 +227,7 @@ bst.insert(7)
 // bst.insert(18)
 // bst.insert(4)
 
-// console.log(bst.search(bst.root,19))
+console.log(bst.search(bst.root,8))
 // // bst.preorder(bst.root)
 // // bst.inorder(bst.root)
 // bst.postorder(bst.root)
@@ -236,6 +236,6 @@ bst.insert(7)
 // console.log(bst.searchmax(bst.root))
 
 // bst.bfssearch(bst.root)
-bst.delete(10)
-bst.bfssearch(bst.root)
+// bst.delete(10)
+// bst.bfssearch(bst.root)
 

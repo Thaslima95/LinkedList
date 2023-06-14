@@ -75,6 +75,11 @@ function findleafnode(user,pos,id)
     })
 }
 
+function findleftleaftnode()
+{
+    const sql=""
+}
+
 function insertdata(user,pos,id)
 {
     const sql=`INSERT INTO btree (user_id,parent_id) VALUES ('${user}',${id})`
@@ -112,9 +117,34 @@ function insert(user,pos,parent_id)
    
 }
 
+function search(root,value)
+{
+    const sql=`SELECT * FROM bstree WHERE id=${root}`
+    connection.query(sql,(err,result)=>{
+        if(err) throw err;
+       if(result[0].Investment==value)
+       {
+        console.log("find")
+       }
+       else if(value<result[0].Investment)
+       {
+        root=result[0].left_child;
+        search(root,value)
+       }
+        else if(value>result[0].Investment)
+       {
+        root=result[0].right_child;
+        search(root,value)
+       }
+    })
+}
 
 
 insert('PS07','left',2)
+
+
+
+
 
 
 
