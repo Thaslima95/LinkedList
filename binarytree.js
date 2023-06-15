@@ -140,7 +140,9 @@ function search(root,value)
 }
 
 
-insert('PS07','left',2)
+// insert('PS07','left',2)
+
+search(1,90090)
 
 
 
