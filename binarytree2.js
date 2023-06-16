@@ -53,10 +53,8 @@ function binarytree(user,amnt,parent_id)
 {
     const query=`SELECT b1.id,b1.left_child,b1.right_child,b1.parent_id,b1.Investment FROM bstree b1 INNER JOIN bstree b2 ON b1.id=${parent_id}`
     connection.query(query,(err,result)=>{
-        if(err) throw err;
-       
+        if(err) throw err; 
         parent_id=result[0].id
-       
         if(amnt < result[0].Investment)
         {
              if(result[0].left_child==null)
@@ -97,33 +95,6 @@ function binarytree(user,amnt,parent_id)
     })
 }
 
-function search(root,value)
-{
-    
-    const sql=`SELECT * FROM bstree WHERE id=${root}`
-    connection.query(sql,(err,result)=>{
-        if(err) throw err;
-       if(result[0].Investment==value)
-       {
-        
-        return true;
-       }
-       else if(value<result[0].Investment)
-       {
-        root=result[0].left_child;
-        search(root,value)
-       }
-        else if(value>result[0].Investment)
-       {
-        root=result[0].right_child;
-        search(root,value)
-       }
-       else{
-        return false;
-       }
-    })
-    
-}
 
 // insert('PS08',90000)
 // insert('PS09',100002)
@@ -131,4 +102,33 @@ function search(root,value)
 // insert('PS07',100001)
 
 
-console.log(search(1,90000))
+
+
+function searchValueInBinaryTree(root,value)
+{
+  if(!root)
+  {
+    console.log("value not found")
+  }
+  else
+  {
+ connection.query(`SELECT * FROM bstree WHERE id=${root}`,(err,result)=>{
+  if(err) throw err;
+  if(result[0].Investment==value)
+  {
+  console.log("value found")
+  }
+  else if(value < result[0].Investment)
+  {
+    searchValueInBinaryTree(result[0].left_child,value)
+  }
+  else if(value > result[0].Investment)
+  {
+    searchValueInBinaryTree(result[0].right_child,value)
+  }
+ })
+}
+}
+searchValueInBinaryTree(1,1000005)
+
+
