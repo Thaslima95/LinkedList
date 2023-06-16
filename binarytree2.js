@@ -15,7 +15,7 @@ connection.connect((err) => {
 // const sql=`CREATE TABLE bstree (id INT AUTO_INCREMENT PRIMARY KEY ,
 //     user_id VARCHAR(255),parent_id INT DEFAULT NULL,
 //     left_child INT DEFAULT NULL,right_child INT DEFAULT NULL,
-//     Investment INT,
+//     Investment INT UNIQUE,
 //     FOREIGN KEY (parent_id) REFERENCES binaryTree(id))`
 // connection.query(sql,function(err,result)
 // {
@@ -129,6 +129,8 @@ function searchValueInBinaryTree(root,value)
  })
 }
 }
-searchValueInBinaryTree(1,1000005)
+// searchValueInBinaryTree(1,1000005)
+
+
 
 
