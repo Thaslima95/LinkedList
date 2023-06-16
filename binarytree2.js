@@ -106,6 +106,7 @@ function binarytree(user,amnt,parent_id)
 
 function searchValueInBinaryTree(root,value)
 {
+  console.time();
   if(!root)
   {
     console.log("value not found")
@@ -128,8 +129,22 @@ function searchValueInBinaryTree(root,value)
   }
  })
 }
+console.timeEnd()
 }
 // searchValueInBinaryTree(1,1000005)
+
+function countNumberofNodes(root)
+{
+  console.time()
+  const sql='SELECT count(*) FROM bstree'
+  connection.query(sql,(err,result)=>{
+    if(err) throw err;
+    console.log(result)
+  })
+  console.timeEnd()
+}
+
+countNumberofNodes(1)
 
 
 

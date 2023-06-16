@@ -33,7 +33,7 @@ class Stack{
             {
                 if(mystack.isEmpty())
                 {
-                    return false;
+                    return 0;
                 }
                 // console.log(mystack.top())
                 if((char==='}' && mystack.top()=='{')||(char===')' && mystack.top()=='(')||(char===']' && mystack.top()=='['))
@@ -49,12 +49,14 @@ class Stack{
         }
         if(mystack.isEmpty())
                     {
-                        return true;
+                        return 0;
                     }
-        return false;
+                    console.log(mystack)
+        return 1;
     }
-console.log(isbalanced('{[([({))]}}'))
-console.log(isbalanced('{(]}'))
-console.log(isbalanced('({[{}])}'))
-console.log(isbalanced('(){}(]['))
-console.log(isbalanced('{([{()}])}'))
+// console.log(isbalanced('{[([({))]}}'))
+// console.log(isbalanced('{(]}'))
+// console.log(isbalanced('({[{}])}'))
+// console.log(isbalanced('(){}(]['))
+// console.log(isbalanced('{([{()}])}'))
+console.log(isbalanced("HELLO AND (WELCOME (TO THE) TCEA (CONTEST)TODAY)IS (SATURDAY()))"))
